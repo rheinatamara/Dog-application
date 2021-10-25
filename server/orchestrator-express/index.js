@@ -17,7 +17,7 @@ app.get("/dogs", async (req, res, next) => {
     if (!data) {
       let { data } = await axios({
         method: "GET",
-        url: "https://dog.ceo/api/breeds/list/all",
+        url: "https://dog.ceo/api/breeds/list",
       });
       const allDogs = data;
       await redis.set("allDogs", JSON.stringify(allDogs));
